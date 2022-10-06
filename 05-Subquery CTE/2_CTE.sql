@@ -104,11 +104,11 @@ Declare @maxId INT = 200;
 
 WITH GenId (Id) AS 
 (	
-	SELECT 10 
+	SELECT 1 
 
 	UNION ALL
 	
-	SELECT GenId.Id + 2
+	SELECT GenId.Id + 1
 	FROM GenId 
 	WHERE GenId.Id < @maxId
 )
