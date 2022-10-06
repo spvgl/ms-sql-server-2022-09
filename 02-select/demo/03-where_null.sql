@@ -179,7 +179,7 @@ FROM Sales.Orders AS o
 -- DATEDIFF ( datepart , startdate , enddate )
 -- -----------------------------------------------
 -- Справка DATEDIFF https://docs.microsoft.com/ru-ru/sql/t-sql/functions/datediff-transact-sql
--- Справка DATEADD  https://docs.microsoft.com/ru-ru/sql/t-sql/functions/datediff-transact-sql
+-- Справка DATEADD  https://docs.microsoft.com/ru-ru/sql/t-sql/functions/dateadd-transact-sql
 
 -- Years
 SELECT DATEDIFF (yy,'2007-01-01', '2008-01-01') AS 'YearDiff';
