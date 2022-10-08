@@ -40,7 +40,6 @@ FROM @test_var AS test
 	JOIN Application.People AS P
 	ON P.PersonID = test.PersonID;
 
-
 DROP TABLE #test;
 
 ---------------------------------------
@@ -96,7 +95,6 @@ VALUES
 	(1, 'Alice'),
 	(2, 'Jacky'),
 	(3, 'Layka');
-
 
 SELECT *
 FROM ##test;
