@@ -10,7 +10,7 @@ FROM [Application].People AS P
 		ON P.PersonID = I.SalespersonPersonID
 go
 -- CTE 		
-WITH InvoicesCTE (SalespersonPersonID, SalesCount) AS 
+;WITH InvoicesCTE (SalespersonPersonID, SalesCount) AS 
 (
 	SELECT SalespersonPersonID, Count(InvoiceId) 
 	FROM Sales.Invoices
