@@ -87,7 +87,7 @@ WHERE s.IsSalesperson = 1)
 WITH CHECK OPTION;
 
 UPDATE Website.SalesManagerCheck 
-SET PhoneNumber = '(415) 555-0102' --'(415) 555-0505' -- 
+SET PhoneNumber = '(415) 555-0102' --'(415) 555-0505'  
 WHERE PersonID = 7;
 
 SELECT * FROM Website.SalesManagerCheck; 
