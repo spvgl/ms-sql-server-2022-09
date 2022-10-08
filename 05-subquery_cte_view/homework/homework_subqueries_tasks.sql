@@ -91,5 +91,4 @@ FROM Sales.Invoices
 ORDER BY TotalSumm DESC
 
 -- --
-
 напишите здесь свое решение
