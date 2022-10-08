@@ -141,7 +141,6 @@ WHERE (SELECT count(*)
 	FROM Sales.Invoices
 	WHERE SalespersonPersonID = People.PersonID) > 0
 
-
 ----------------
 -- ALL, ANY
 ----------------
