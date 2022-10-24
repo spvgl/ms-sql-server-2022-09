@@ -28,7 +28,6 @@ USE WideWorldImporters
 * Пример экспорта/импорта в файл https://docs.microsoft.com/en-us/sql/relational-databases/import-export/examples-of-bulk-import-and-export-of-xml-documents-sql-server
 */
 
-
 /*
 1. В личном кабинете есть файл StockItems.xml.
 Это данные из таблицы Warehouse.StockItems.
@@ -38,17 +37,17 @@ USE WideWorldImporters
 Загрузить эти данные в таблицу Warehouse.StockItems: 
 существующие записи в таблице обновить, отсутствующие добавить (сопоставлять записи по полю StockItemName). 
 
-Сделать два варианта: с помощью OPENXML и через XQuery.
+Сделать два варианта: с помощью OPENXML и через XQuery (методы value(), nodes() и т.д.).
 */
 
 напишите здесь свое решение
 
 /*
 2. Выгрузить данные из таблицы StockItems в такой же xml-файл, как StockItems.xml
+Если с сохранением в файл возникают проблемы, то напишите только SELECT, возвращающий данные в нужном формате.
 */
 
 напишите здесь свое решение
-
 
 /*
 3. В таблице Warehouse.StockItems в колонке CustomFields есть данные в JSON.
@@ -79,6 +78,5 @@ USE WideWorldImporters
 ... where ... Tags like '%Vintage%'
 ... where ... CustomFields like '%Vintage%' 
 */
-
 
 напишите здесь свое решение
