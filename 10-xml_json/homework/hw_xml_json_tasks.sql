@@ -57,6 +57,7 @@ USE WideWorldImporters
 - StockItemName
 - CountryOfManufacture (из CustomFields)
 - FirstTag (из поля CustomFields, первое значение из массива Tags)
+Если Tags нет, то вывести "No Tags"
 */
 
 напишите здесь свое решение
