@@ -12,6 +12,7 @@ FROM sys.fn_dblog(NULL,NULL)
 -- смотрим на примере 01 - Transactions\01-Transactions.sql
 
 SELECT 
+  [Current LSN],
   Operation, 
   Description,
   [Compression Info], 
@@ -19,4 +20,4 @@ SELECT
   [Lock Information],
   * 
 FROM sys.fn_dblog(NULL,NULL)
--- WHERE [Transaction ID] = '0000:1750091'
+-- WHERE [Transaction ID] = '0000:0079bd56'
