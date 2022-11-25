@@ -15,5 +15,12 @@ jobs:
 
       - run: ls
 
-      - run: echo "----------- END --------"
 
+      - name: Run TSQLLint
+        uses: lowlydba/tsqllint-action@v0.8.0
+        with:
+          path: "*.sql"
+          config: "./.tsqllintrc"
+          comment: true
+
+      - run: echo "----------- END --------"
