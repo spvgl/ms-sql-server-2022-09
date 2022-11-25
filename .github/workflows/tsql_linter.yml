@@ -13,20 +13,15 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v3
 
-      - run: ls
-
-      - id: sql-file-folder
-        shell: pwsh
-        run: |
-          folderName=$($(Get-Date).Year).$($(Get-Date).Month.ToString("00"))
-          echo "folder=$folderName" >> $GITHUB_OUTPUT
+      - run: ls ./
+      - run: ls ./02-select/demo/
 
       - name: SQL Lint
         id: sql-lint
         uses: im-open/tsql-lint-action@v1.1.0
         with:
           tsqllint-version: 1.11.0
-          path-to-sql-files: "Database/src/Migrations/${{ steps.sql-file-folder.outputs.folder }}"
+          path-to-sql-files: "02-select/demo/"
           file-name-filter: "*.sql"
           path-to-lint-config: ./.tsqllintrc
       
