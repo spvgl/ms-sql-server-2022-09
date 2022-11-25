@@ -8,10 +8,10 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3.0.2
+        uses: actions/checkout
 
       - name: TSQLLint
-        uses: lowlydba/tsqllint-action@v1.0.0
+        uses: lowlydba/tsqllint-action
         with:
           path: "*.sql *.tsql"
           config: "./.tsqllintrc"
