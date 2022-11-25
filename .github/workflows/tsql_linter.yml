@@ -10,14 +10,19 @@ jobs:
     steps:
       - run: echo "----------- BEGIN --------"
 
-      - name: "NPM Version"
-        run: npm version
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 6.0.x
+
+      - name: "dotnet --version"
+        run: dotnet --version
 
       - name: "Install TSQLLint"
-        run: npm i -g tsqllint 
+        run: dotnet tool install --global TSQLLint
 
-      - name: "Run Lint"
-        run: npm --prefix ${{ github.action_path }} run lint -- "./02-select/demo/" -c ./.tsqllintrc
+      # - name: "Run Lint"
+      #   run: npm --prefix ${{ github.action_path }} run lint -- "./02-select/demo/" -c ./.tsqllintrc
 
       # - name: Checkout source code
       #   uses: actions/checkout@v3
