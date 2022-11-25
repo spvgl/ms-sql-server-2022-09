@@ -10,22 +10,27 @@ jobs:
     steps:
       - run: echo "----------- BEGIN --------"
 
+      - name: Npm Install
+        shell: pwsh
+        run: npm --prefix ${{ github.action_path }} install ${{ github.action_path }}
+
       - name: Checkout source code
         uses: actions/checkout@v3
 
-      - run: ls ./
-      - run: ls ./02-select/demo/
-
-      - name: SQL Lint
-        id: sql-lint
-        uses: im-open/tsql-lint-action@v1.1.0
-        with:
-          tsqllint-version: 1.15.1
-          path-to-sql-files: "02-select/demo/ 02-select/homework/"
-          file-name-filter: "*.sql"
-          path-to-lint-config: ".tsqllintrc"
+      - run: ls -la ./
       
-      - name: Print Lint Result
-        run: echo '${{ steps.sql-lint.outputs.lint-result }}'
+      # - run: ls ./02-select/demo/
+
+      # - name: SQL Lint
+      #   id: sql-lint
+      #   uses: im-open/tsql-lint-action@v1.1.0
+      #   with:
+      #     tsqllint-version: 1.15.1
+      #     path-to-sql-files: "02-select/demo/ 02-select/homework/"
+      #     file-name-filter: "*.sql"
+      #     path-to-lint-config: ".tsqllintrc"
+      
+      # - name: Print Lint Result
+      #   run: echo '${{ steps.sql-lint.outputs.lint-result }}'
 
       - run: echo "----------- END --------"
