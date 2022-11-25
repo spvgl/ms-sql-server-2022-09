@@ -16,8 +16,8 @@ jobs:
       - name: "Install TSQLLint"
         run: npm i -g tsqllint 
 
-      - name: "npm list tsqllint"
-        run: npm list tsqllint 
+      - name: "Run Lint"
+        run: npm --prefix ${{ github.action_path }} run lint -- "./02-select/demo/" -c ./.tsqllintrc
 
       # - name: Checkout source code
       #   uses: actions/checkout@v3
