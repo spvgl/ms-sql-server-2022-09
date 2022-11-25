@@ -20,10 +20,10 @@ jobs:
         id: sql-lint
         uses: im-open/tsql-lint-action@v1.1.0
         with:
-          tsqllint-version: 1.11.0
-          path-to-sql-files: "02-select/demo/"
+          tsqllint-version: 1.15.1
+          path-to-sql-files: "./"
           file-name-filter: "*.sql"
-          path-to-lint-config: ./.tsqllintrc
+          path-to-lint-config: ".tsqllintrc"
       
       - name: Print Lint Result
         run: echo '${{ steps.sql-lint.outputs.lint-result }}'
