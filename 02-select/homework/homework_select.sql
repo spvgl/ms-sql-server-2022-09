@@ -22,7 +22,7 @@ TODO: Требования к проверке:
 -- Задание - написать выборки для получения указанных ниже данных.
 -- ---------------------------------------------------------------------------
 
-USE WideWorldImporters
+USE WideWorldImporters;
 
 /*
 1. Все товары, в названии которых есть "urgent" или название начинается с "Animal".
@@ -31,7 +31,7 @@ USE WideWorldImporters
 Таблицы: Warehouse.StockItems.
 */
 
-напишите здесь свое решение
+-- напишите здесь свое решение
 
 /*
 2. Поставщиков (Suppliers), у которых не было сделано ни одного заказа (PurchaseOrders).
@@ -42,7 +42,7 @@ USE WideWorldImporters
 По каким колонкам делать JOIN подумайте самостоятельно.
 */
 
-напишите здесь свое решение
+-- напишите здесь свое решение
 
 /*
 3. Заказы (Orders) с товарами ценой (UnitPrice) более 100$
@@ -64,7 +64,7 @@ USE WideWorldImporters
 Таблицы: Sales.Orders, Sales.OrderLines, Sales.Customers.
 */
 
-напишите здесь свое решение
+-- напишите здесь свое решение
 
 /*
 4. Заказы поставщикам (Purchasing.Suppliers),
@@ -81,7 +81,7 @@ USE WideWorldImporters
 Таблицы: Purchasing.Suppliers, Purchasing.PurchaseOrders, Application.DeliveryMethods, Application.People.
 */
 
-напишите здесь свое решение
+-- напишите здесь свое решение
 
 /*
 5. Десять последних продаж (по дате продажи - InvoiceDate) с именем клиента (клиент - CustomerID) и именем сотрудника,
@@ -92,7 +92,7 @@ USE WideWorldImporters
 Таблицы: Sales.Invoices, Sales.Customers, Application.People.
 */
 
-напишите здесь свое решение
+-- напишите здесь свое решение
 
 /*
 6. Все ид и имена клиентов (клиент - CustomerID) и их контактные телефоны (PhoneNumber),
@@ -103,4 +103,4 @@ USE WideWorldImporters
 Таблицы: Sales.Invoices, Sales.InvoiceLines, Sales.Customers, Warehouse.StockItems.
 */
 
-напишите здесь свое решение
+-- напишите здесь свое решение
