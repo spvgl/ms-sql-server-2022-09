@@ -8,18 +8,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo "----------- BEGIN --------"
-
-      - name: Setup dotnet
+      - name: Install dotnet
         uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: 6.0.x
 
       - name: "dotnet --version"
         run: dotnet --version
 
       - name: "Install TSQLLint"
         run: dotnet tool install --global TSQLLint
+
+      - name: "tsqllint --help"
+        run: tsqllint --help
 
       # - name: "Run Lint"
       #   run: npm --prefix ${{ github.action_path }} run lint -- "./02-select/demo/" -c ./.tsqllintrc
@@ -42,5 +41,3 @@ jobs:
       
       # - name: Print Lint Result
       #   run: echo '${{ steps.sql-lint.outputs.lint-result }}'
-
-      - run: echo "----------- END --------"
