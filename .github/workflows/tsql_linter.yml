@@ -3,15 +3,15 @@ on: [push]
 
 jobs:
   build:
-    name: Lint Code
+    name: Check code with TSQL Linter
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout
+        uses: actions/checkout@v3.0.2
 
       - name: TSQLLint
-        uses: lowlydba/tsqllint-action
+        uses: lowlydba/tsqllint-action@v0.8.0
         with:
           path: "*.sql *.tsql"
           config: "./.tsqllintrc"
