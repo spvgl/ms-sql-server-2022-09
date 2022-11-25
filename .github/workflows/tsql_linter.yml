@@ -15,12 +15,22 @@ jobs:
 
       - run: ls
 
+      - id: sql-file-folder
+        shell: pwsh
+        run: |
+          folderName=$($(Get-Date).Year).$($(Get-Date).Month.ToString("00"))
+          echo "folder=$folderName" >> $GITHUB_OUTPUT
 
-      - name: Run TSQLLint
-        uses: lowlydba/tsqllint-action@v0.8.0
+      - name: SQL Lint
+        id: sql-lint
+        uses: im-open/tsql-lint-action@v1.1.0
         with:
-          path: "*.sql"
-          config: "./.tsqllintrc"
-          comment: true
+          tsqllint-version: 1.11.0
+          path-to-sql-files: "Database/src/Migrations/${{ steps.sql-file-folder.outputs.folder }}"
+          file-name-filter: "*.sql"
+          path-to-lint-config: ./.tsqllintrc
+      
+      - name: Print Lint Result
+        run: echo '${{ steps.sql-lint.outputs.lint-result }}'
 
       - run: echo "----------- END --------"
