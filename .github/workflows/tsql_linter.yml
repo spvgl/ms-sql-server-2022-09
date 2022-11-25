@@ -17,8 +17,11 @@ jobs:
       - name: "Install TSQLLint"
         run: dotnet tool install --global TSQLLint
 
-      - name: "tsqllint --help"
-        run: tsqllint --help
+      - name: "tsqllint --version"
+        run: tsqllint --version
+
+      - name: "Run TSQLLint"
+        run: tsqllint --config ./.tsqllintrc "./02-select/homework/"
 
       # - name: "Run Lint"
       #   run: npm --prefix ${{ github.action_path }} run lint -- "./02-select/demo/" -c ./.tsqllintrc
