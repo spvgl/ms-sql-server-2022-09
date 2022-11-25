@@ -21,7 +21,7 @@ jobs:
         uses: im-open/tsql-lint-action@v1.1.0
         with:
           tsqllint-version: 1.15.1
-          path-to-sql-files: "./"
+          path-to-sql-files: "02-select/demo/ 02-select/homework/"
           file-name-filter: "*.sql"
           path-to-lint-config: ".tsqllintrc"
       
