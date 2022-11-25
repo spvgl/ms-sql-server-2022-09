@@ -10,15 +10,17 @@ jobs:
     steps:
       - run: echo "----------- BEGIN --------"
 
-      - name: Npm Install
-        shell: pwsh
-        run: npm --prefix ${{ github.action_path }} install ${{ github.action_path }}
+      - name: "NPM Version"
+        run: npm version
 
-      - name: Checkout source code
-        uses: actions/checkout@v3
+      - name: Install TSQLLint
+        run: npm i -g tsqllint 
+
+      # - name: Checkout source code
+      #   uses: actions/checkout@v3
 
       - run: ls -la ./
-      
+
       # - run: ls ./02-select/demo/
 
       # - name: SQL Lint
