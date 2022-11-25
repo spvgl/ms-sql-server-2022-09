@@ -8,42 +8,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout source code
+      - name: "Checkout source code"
         uses: actions/checkout@v3
 
-      - name: Install dotnet
+      - name: "Install dotnet"
         uses: actions/setup-dotnet@v3
-
-      - name: "dotnet --version"
-        run: dotnet --version
 
       - name: "Install TSQLLint"
         run: dotnet tool install --global TSQLLint
 
-      - name: "tsqllint --version"
-        run: tsqllint --version
-
       - name: "Run TSQLLint"
         run: tsqllint --config ./.tsqllintrc ./02-select/homework/*.sql
-
-
-      # - name: "Run Lint"
-      #   run: npm --prefix ${{ github.action_path }} run lint -- "./02-select/demo/" -c ./.tsqllintrc
-
-
-
-      - run: ls -la ./
-
-      # - run: ls ./02-select/demo/
-
-      # - name: SQL Lint
-      #   id: sql-lint
-      #   uses: im-open/tsql-lint-action@v1.1.0
-      #   with:
-      #     tsqllint-version: 1.15.1
-      #     path-to-sql-files: "02-select/demo/ 02-select/homework/"
-      #     file-name-filter: "*.sql"
-      #     path-to-lint-config: ".tsqllintrc"
-      
-      # - name: Print Lint Result
-      #   run: echo '${{ steps.sql-lint.outputs.lint-result }}'
