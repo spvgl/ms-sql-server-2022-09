@@ -21,7 +21,8 @@ jobs:
         run: tsqllint --version
 
       - name: "Run TSQLLint"
-        run: tsqllint --config ./.tsqllintrc "./02-select/homework/"
+        run: tsqllint --config ${{ github.action_path }}/.tsqllintrc ${{ github.action_path }}/02-select/homework/*.sql
+
 
       # - name: "Run Lint"
       #   run: npm --prefix ${{ github.action_path }} run lint -- "./02-select/demo/" -c ./.tsqllintrc
