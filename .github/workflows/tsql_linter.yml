@@ -13,8 +13,11 @@ jobs:
       - name: "NPM Version"
         run: npm version
 
-      - name: Install TSQLLint
+      - name: "Install TSQLLint"
         run: npm i -g tsqllint 
+
+      - name: "npm list tsqllint"
+        run: npm list tsqllint 
 
       # - name: Checkout source code
       #   uses: actions/checkout@v3
