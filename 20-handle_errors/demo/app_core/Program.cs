@@ -12,11 +12,8 @@ namespace HelloWorld
             Console.OutputEncoding = Encoding.UTF8;
 
             // При необходимости измените строку подключения
-            // var connectionString =
-            //     "Server=localhost;Database=WideWorldImporters;Integrated Security=true;";
-
-                var connectionString =
-                    "Server=localhost;Database=WideWorldImporters;User ID=sa;Password=P@ssw0rd;";
+            var connectionString =
+                "Server=localhost;Database=WideWorldImporters;Integrated Security=true;";
 
             try
             {
