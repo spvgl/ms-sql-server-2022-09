@@ -4,7 +4,7 @@ ADD InvoiceConfirmedForProcessing DATETIME;
 
 USE master
 ALTER DATABASE WideWorldImporters
-SET ENABLE_BROKER; 
+SET ENABLE_BROKER  WITH NO_WAIT; 
 
 ALTER DATABASE WideWorldImporters SET TRUSTWORTHY ON;
 
