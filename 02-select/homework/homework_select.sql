@@ -93,7 +93,6 @@ USE WideWorldImporters;
 которые покупали товар "Chocolate frogs 250g".
 Имя товара смотреть в таблице Warehouse.StockItems, имена клиентов и их контакты в таблице Sales.Customers.
 
-Вывести: todo
 Таблицы: Sales.Invoices, Sales.InvoiceLines, Sales.Customers, Warehouse.StockItems.
 */
 
