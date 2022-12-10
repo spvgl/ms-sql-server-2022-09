@@ -44,7 +44,8 @@ WITH PERMISSION_SET = SAFE;
 -- <DB> -> Programmability -> Assemblies 
 
 -- Посмотреть подключенные сборки (SSMS: <DB> -> Programmability -> Assemblies)
-SELECT * FROM sys.assemblies;
+SELECT name, principal_id, assembly_id, clr_name, permission_set, permission_set_desc, is_visible, create_date, modify_date, is_user_defined
+FROM sys.assemblies;
 GO
 
 -- Подключить функцию из dll - AS EXTERNAL NAME
@@ -74,7 +75,8 @@ EXEC dbo.usp_SayHello @Name = 'OTUS Student';
 -- --------------------------
 
 -- Список подключенных CLR-объектов
-SELECT * FROM sys.assembly_modules;
+SELECT object_id, assembly_id, assembly_class, assembly_method, null_on_null_input, execute_as_principal_id
+FROM sys.assembly_modules;
 
 -- Посмотреть "код" сборки
 -- SSMS: <DB> -> Programmability -> Assemblies -> Script Assembly as -> CREATE To

@@ -1,4 +1,6 @@
-﻿USE WideWorldImporters;
+﻿/* tsqllint-disable error schema-qualify */
+
+USE WideWorldImporters;
 GO
 
 -- Что мы хотим от типа PhoneNumber
