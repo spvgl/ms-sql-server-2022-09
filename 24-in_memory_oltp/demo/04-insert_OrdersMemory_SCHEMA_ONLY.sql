@@ -1,7 +1,7 @@
 USE WideWorldImporters;
 GO
 
-DELETE FROM Sales.OrdersMemory_SCHEMA_ONLY
+DELETE FROM Sales.OrdersMemory_SCHEMA_ONLY;
 GO
 
 DECLARE @RowCount INT = 50000;
@@ -42,7 +42,7 @@ END;
 GO
 
 -- Очищаем таблицу
-DELETE FROM Sales.OrdersMemory_SCHEMA_ONLY
+DELETE FROM Sales.OrdersMemory_SCHEMA_ONLY;
 GO
 
 -- Проверяем

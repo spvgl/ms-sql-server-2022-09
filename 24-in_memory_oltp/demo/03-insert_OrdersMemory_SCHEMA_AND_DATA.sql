@@ -1,7 +1,7 @@
 USE WideWorldImporters;
 GO
 
-DELETE FROM Sales.OrdersMemory_SCHEMA_AND_DATA
+DELETE FROM Sales.OrdersMemory_SCHEMA_AND_DATA;
 GO
 
 DECLARE @RowCount INT = 50000;
@@ -61,7 +61,7 @@ GO
 -- Обычная ХП
 -- --------------------------
 -- Очищаем таблицу
-DELETE FROM Sales.OrdersMemory_SCHEMA_AND_DATA
+DELETE FROM Sales.OrdersMemory_SCHEMA_AND_DATA;
 GO
 
 -- Проверяем
@@ -79,7 +79,7 @@ GO
 -- Нативная ХП
 -- --------------------------
 -- Очищаем таблицу
-DELETE FROM Sales.OrdersMemory_SCHEMA_AND_DATA
+DELETE FROM Sales.OrdersMemory_SCHEMA_AND_DATA;
 GO
 
 -- Проверяем
