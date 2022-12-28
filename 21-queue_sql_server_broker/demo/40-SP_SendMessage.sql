@@ -51,7 +51,9 @@ BEGIN
 	MESSAGE TYPE
 	[//WWI/SB/RequestMessage]
 	(@RequestMessage);
+	
 	SELECT @RequestMessage AS SentRequestMessage;
+	
 	COMMIT TRAN 
 END
 GO
