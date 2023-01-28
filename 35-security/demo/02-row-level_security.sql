@@ -192,4 +192,5 @@ SELECT * FROM Sales;
 GO
 
 -- Более сложный пример можно посмотреть в WideWorldImporters:
--- функция Application.DetermineCustomerAccess
+-- * политика Application.FilterCustomersBySalesTerritoryRole
+-- * функция Application.DetermineCustomerAccess

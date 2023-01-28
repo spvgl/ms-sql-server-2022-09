@@ -5,13 +5,18 @@ USE WideWorldImporters;
 -- ------------------------
 
 -- windows-аутентификация
--- У вас пользователь "sql-srv\user" будет другим
-CREATE LOGIN "sql-srv\user" FROM WINDOWS;
--- DROP LOGIN [sql-srv\user]
+-- У вас пользователь "win11\test_user" будет другим
+CREATE LOGIN "win11\test_user" FROM WINDOWS;
+
+-- win11 - домен (сервер)
+-- test_user - имя логина
+
+-- DROP LOGIN [win11\test_user]
 
 -- SQL Server аутентификация
 -- DROP LOGIN user1
 CREATE LOGIN user1 WITH PASSWORD = 'P@ssw0rd';
+-- Не забудьте включить смешанную аутентификацию для инстанса SQL Server 
 
 -- смотрим список логинов
 SELECT * FROM sys.server_principals;
@@ -57,7 +62,6 @@ EXEC sp_addrolemember 'db_datawriter', user1;
 -- кто входит в роли
 EXEC sp_helprolemember;
 
-
 -- создание роли
 -- DROP ROLE TableCreator
 CREATE ROLE TableCreator;
@@ -92,5 +96,3 @@ SELECT * FROM sys.server_principals;
 -- пользователи
 -- sid - ссылка на server_principals.sid
 SELECT * FROM sys.database_principals;
-
-
