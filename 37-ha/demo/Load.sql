@@ -1,6 +1,6 @@
-USE TestReplicationDB
+USE TestReplicationDB;
 
-DECLARE @n int = 1
+DECLARE @n INT = 1;
 
 WHILE 1 = 1
 BEGIN	
@@ -8,5 +8,5 @@ BEGIN
 	VALUES ('name' + cast(@n as nvarchar(10)));
 
 	WAITFOR DELAY '00:00:05';	
-	SET @n = @n + 1
+	SET @n = @n + 1;
 END;

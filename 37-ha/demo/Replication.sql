@@ -1,10 +1,10 @@
 -- Создаем исходную БД
-USE master
-GO
+USE master;
+GO;
 
-ALTER DATABASE TestReplicationDB SET OFFLINE WITH ROLLBACK IMMEDIATE
+ALTER DATABASE TestReplicationDB SET OFFLINE WITH ROLLBACK IMMEDIATE;
 GO
-DROP DATABASE IF EXISTS TestReplicationDB 
+DROP DATABASE IF EXISTS TestReplicationDB;
 GO
 CREATE DATABASE TestReplicationDB;
 GO
@@ -22,7 +22,7 @@ GO
 -- Вставляем данные
 USE TestReplicationDB;
 GO
-INSERT INTO Table1(Name) VALUES('aaa')
+INSERT INTO Table1(Name) VALUES('aaa');
 GO
 
 -- Смотрим данные
@@ -32,20 +32,20 @@ GO
 -- Создаем БД для репликации 
 USE master
 GO
-ALTER DATABASE TestReplicationDB_Copy SET OFFLINE WITH ROLLBACK IMMEDIATE
+ALTER DATABASE TestReplicationDB_Copy SET OFFLINE WITH ROLLBACK IMMEDIATE;
 GO
-DROP DATABASE IF EXISTS TestReplicationDB_Copy 
+DROP DATABASE IF EXISTS TestReplicationDB_Copy;
 GO
 CREATE DATABASE TestReplicationDB_Copy;
 GO
 
 -- Смотрим данные
-USE TestReplicationDB
+USE TestReplicationDB;
 SELECT * FROM Table1;
 -- Строка, которую до этого вставили
 GO
 
-USE TestReplicationDB_Copy 
+USE TestReplicationDB_Copy;
 SELECT * FROM Table1;
 -- Таблицы Table1 нет, что логично
 GO
@@ -58,11 +58,11 @@ GO
 -- ...
 
 -- Смотрим данные
-USE TestReplicationDB
+USE TestReplicationDB;
 SELECT * FROM Table1;
 GO
 
-USE TestReplicationDB_Copy 
+USE TestReplicationDB_Copy;
 SELECT * FROM Table1;
 -- Table1 появилась автоматически
 GO
@@ -70,36 +70,36 @@ GO
 -- Запустить в отдельном окне "нагрузку" из Load.sql
 
 -- Опять смотрим данные
-USE TestReplicationDB
+USE TestReplicationDB;
 SELECT * FROM Table1;
 
-USE TestReplicationDB_Copy
+USE TestReplicationDB_Copy;
 SELECT * FROM Table1;
 GO
 
 -- --------------
 -- DELETE
 -- --------------
-USE TestReplicationDB
+USE TestReplicationDB;
 DELETE FROM Table1 
-WHERE ID > 2
+WHERE ID > 2;
 GO
 
 -- Опять смотрим данные
-USE TestReplicationDB
+USE TestReplicationDB;
 SELECT * FROM Table1;
 
-USE TestReplicationDB_Copy
+USE TestReplicationDB_Copy;
 SELECT * FROM Table1;
 GO
 
 -- --------------
 -- UPDATE
 -- --------------
-USE TestReplicationDB
+USE TestReplicationDB;
 UPDATE Table1 
 SET Name = 'updated_name'
-WHERE ID < 5
+WHERE ID < 5;
 GO
 
 -- Опять смотрим данные
@@ -116,7 +116,7 @@ GO
 USE TestReplicationDB_Copy
 UPDATE Table1 
 SET Name = 'changed_on_replica'
-WHERE ID < 5
+WHERE ID < 5;
 
 USE TestReplicationDB
 SELECT * FROM Table1;
@@ -128,7 +128,7 @@ SELECT * FROM Table1;
 USE TestReplicationDB
 UPDATE Table1 
 SET Name = 'changed_on_primary'
-WHERE ID < 5
+WHERE ID < 5;
 
 USE TestReplicationDB
 SELECT * FROM Table1;
